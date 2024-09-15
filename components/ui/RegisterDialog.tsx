@@ -35,7 +35,7 @@ const currencyOptions = [
   {
     code: "NGN",
     options:
-      "card,applepay,googlepay",
+      "card",
   },
   { code: "USD", options: "card,account,googlepay,applepay" },
   { code: "EUR", options: "card,account,googlepay,applepay" },
