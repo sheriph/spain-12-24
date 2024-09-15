@@ -40,7 +40,7 @@ export function RegisterDialog() {
   } = useForm();
 
   const [isCongratsOpen, setIsCongratsOpen] = useState(false);
-  const paymentAmount = 70;
+  const paymentAmount = 1;
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const FLW_KEY =
