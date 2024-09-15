@@ -35,7 +35,7 @@ const currencyOptions = [
   {
     code: "NGN",
     options:
-      "card,ussd,banktransfer,account,internetbanking,nqr,applepay,googlepay,enaira,opay",
+      "card,applepay,googlepay",
   },
   { code: "USD", options: "card,account,googlepay,applepay" },
   { code: "EUR", options: "card,account,googlepay,applepay" },
