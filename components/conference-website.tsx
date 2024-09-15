@@ -34,7 +34,6 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { MapPin, Menu, Mail } from "lucide-react";
 import { RetroGridDemo } from "./ui/RetroGridDemo";
-import { countries } from "@/lib/utils";
 import { RegisterDialog } from "./ui/RegisterDialog";
 import { InvitationDialog } from "./ui/InvitationDialog";
 import { Footer } from "./ui/Footer";

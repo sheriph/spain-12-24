@@ -208,7 +208,7 @@ export function getApiEndpoint(): string {
 
   switch (nodeEnv) {
     case "production":
-      return "https://event.naijagoingabroad.com";
+      return "https://admin.idtaievents.com";
     case "development":
       return "http://localhost:1337";
     default:
