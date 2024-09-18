@@ -67,7 +67,7 @@ export function RegisterDialog() {
   const [isCongratsOpen, setIsCongratsOpen] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState(currencyOptions[0]); // NGN as default
   const [convertedAmount, setConvertedAmount] = useState<number | null>(null);
-  const baseAmount = 109468; // Base amount in NGN
+  const baseAmount = 10000 /* 109468;  */// Base amount in NGN
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const PAYSTACK_KEY =
@@ -96,7 +96,6 @@ export function RegisterDialog() {
     console.log(reference);
     const toastId = toast.loading("Submitting registration... 🚀");
 
-    
     try {
       const formData = watch();
       const formattedEmail = formData.email.trim().toLowerCase();
@@ -155,7 +154,7 @@ export function RegisterDialog() {
 
   const config = {
     reference: Date.now().toString(),
-    email: watch("email"),
+    email: "enquiries@idtaievents.com",
     amount: Math.round(baseAmount * 100), // Paystack expects amount in kobo (smallest currency unit)
     publicKey: PAYSTACK_KEY,
     currency: "NGN",
@@ -327,7 +326,8 @@ export function RegisterDialog() {
                     <p className="font-semibold">Currency Conversion Applied</p>
                     <p>{`₦${baseAmount} NGN ≈ ${convertedAmount} ${selectedCurrency.code}`}</p>
                     <p className="text-gray-500 text-xs mt-1">
-                      You will be charged ₦{baseAmount} NGN. The amount shown in {selectedCurrency.code} is for reference only.
+                      You will be charged ₦{baseAmount} NGN. The amount shown in{" "}
+                      {selectedCurrency.code} is for reference only.
                     </p>
                   </div>
                 </div>
