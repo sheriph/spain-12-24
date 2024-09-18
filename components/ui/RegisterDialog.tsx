@@ -96,6 +96,7 @@ export function RegisterDialog() {
     console.log(reference);
     const toastId = toast.loading("Submitting registration... 🚀");
 
+    
     try {
       const formData = watch();
       const formattedEmail = formData.email.trim().toLowerCase();
