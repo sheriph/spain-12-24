@@ -67,7 +67,7 @@ export function RegisterDialog() {
   const [isCongratsOpen, setIsCongratsOpen] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState(currencyOptions[0]); // NGN as default
   const [convertedAmount, setConvertedAmount] = useState<number | null>(null);
-  const baseAmount = 10000 /* 109468;  */// Base amount in NGN
+  const baseAmount = 109468; // Base amount in NGN
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const PAYSTACK_KEY =
@@ -113,7 +113,7 @@ export function RegisterDialog() {
         RegistrationCode: registrationCode,
         PaymentMethod: "Paystack",
         PaymentStatus: "Paid",
-        PaymentAmount: convertedAmount || baseAmount,
+        PaymentAmount: Math.ceil(convertedAmount || baseAmount),
         PaymentCurrency: selectedCurrency.code,
         PaymentReference: reference.reference,
       };
@@ -155,7 +155,7 @@ export function RegisterDialog() {
   const config = {
     reference: Date.now().toString(),
     email: "enquiries@idtaievents.com",
-    amount: Math.round(baseAmount * 100), // Paystack expects amount in kobo (smallest currency unit)
+    amount: Math.ceil(baseAmount * 100), // Paystack expects amount in kobo (smallest currency unit)
     publicKey: PAYSTACK_KEY,
     currency: "NGN",
   };
@@ -185,7 +185,7 @@ export function RegisterDialog() {
 
       // If not registered, proceed with payment
       toast.success("Proceeding to payment...", { id: toastId });
-     // setIsDialogOpen(false);
+      // setIsDialogOpen(false);
       initializePayment({ config, onSuccess, onClose });
       setIsDialogOpen(false);
     } catch (error: any) {
