@@ -185,8 +185,9 @@ export function RegisterDialog() {
 
       // If not registered, proceed with payment
       toast.success("Proceeding to payment...", { id: toastId });
-      setIsDialogOpen(false);
+     // setIsDialogOpen(false);
       initializePayment({ config, onSuccess, onClose });
+      setIsDialogOpen(false);
     } catch (error: any) {
       console.error("Check registration error:", error);
       const errorMessage =
